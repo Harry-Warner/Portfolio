@@ -10,7 +10,11 @@ const GlobalStyle = createGlobalStyle`
   };
   body {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0;
+    background: rgba(204, 234, 187, .75);
   };
 `;
 

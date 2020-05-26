@@ -10,6 +10,10 @@ class MyApp extends App {
     return (
       <>
         <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+            rel="stylesheet"
+          />
           <title>Harry Warner</title>
         </Head>
         <GlobalStyle />
