@@ -6,6 +6,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import LanguageIcon from "@material-ui/icons/Language";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
+import WorkIcon from "@material-ui/icons/Work";
 
 const Index = () => {
   return (
@@ -31,10 +32,14 @@ const Index = () => {
             <p className="text-base text-cream font-sans ml-1">Harry Warner</p>
           </div>
           <div className="flex items-center py-2">
-            <LanguageIcon style={{ color: "#f7f7f7" }} />
+            <WorkIcon style={{ color: "#f7f7f7" }} />
             <p className="text-base text-cream font-sans ml-1">
               Front end developer
             </p>
+          </div>
+          <div className="flex items-center py-2">
+            <LanguageIcon style={{ color: "#f7f7f7" }} />
+            <p className="text-base text-cream font-sans ml-1">React</p>
           </div>
           <a href="https://www.google.co.uk/maps/place/Lancaster/@54.0441576,-2.8361624,13z/data=!3m1!4b1!4m5!3m4!1s0x487b6141d2138751:0xbea089595c0b389!8m2!3d54.0465742!4d-2.8007412?expflags=__data_rollout__Tactile.IsDogfoodRollout__launched__%3Afalse%2C__data_rollout__Tactile.IsFishfoodRollout__launched__%3Afalse">
             <div className="flex items-center py-2">
@@ -74,7 +79,7 @@ const StyledNav = styled.a`
   width: 200px;
   height: 200px;
   margin: 10px;
-  background: rgb(63, 63, 68);
+  background: #3f3f44;
   border-radius: 0.5rem;
   cursor: pointer;
   display: flex;
