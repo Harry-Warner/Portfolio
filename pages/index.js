@@ -14,14 +14,14 @@ const Index = () => {
       <h1 className="uppercase text-center font-bold text-3xl md:text-5xl font-sans text-dark my-2 md:my-6">
         Welcome to <br className="md:hidden" /> my portfolio
       </h1>
-      <StyledBox className="flex mx-auto py-2 px-2 rounded-lg bg-darkT">
+      <StyledBox className="flex mx-auto py-1 px-1 bg-darkT">
         <div className="grid grid-rows-1 md:grid-cols-2 md:grid-rows-2 h-full">
-          <StyledNav>Portfolio</StyledNav>
+          <StyledNav href="/portfolio">Portfolio</StyledNav>
           <StyledNav>Interaction</StyledNav>
           <StyledNav>Resume</StyledNav>
           <StyledNav>Contact</StyledNav>
         </div>
-        <div className="about flex flex-col px-4 rounded-lg bg-dark font-sans">
+        <div className="about flex flex-col px-4 bg-dark font-sans">
           <img
             className="my-4 w-40 h-40 mx-auto rounded-full"
             src="harry.jpg"
@@ -49,12 +49,12 @@ const Index = () => {
               </p>
             </div>
           </a>
-          <div className="py-4 w-full flex justify-around">
+          <div className="py-3 px-10 w-full flex justify-around items-center">
             <a href="https://github.com/Harry-Warner">
-              <GitHubIcon fontSize="large" style={{ color: "#f7f7f7" }} />
+              <GitHubIcon style={{ color: "#f7f7f7" }} />
             </a>
-            <InstagramIcon fontSize="large" style={{ color: "#f7f7f7" }} />
-            <TwitterIcon fontSize="large" style={{ color: "#f7f7f7" }} />
+            <InstagramIcon style={{ color: "#f7f7f7" }} />
+            <TwitterIcon style={{ color: "#f7f7f7" }} />
           </div>
         </div>
       </StyledBox>
@@ -66,7 +66,7 @@ const StyledBox = styled.div`
   width: fit-content;
 
   .about {
-    margin: 10px;
+    margin: 5px;
     width: 225px;
 
     @media (max-width: 700px) {
@@ -78,9 +78,8 @@ const StyledBox = styled.div`
 const StyledNav = styled.a`
   width: 200px;
   height: 200px;
-  margin: 10px;
+  margin: 5px;
   background: #3f3f44;
-  border-radius: 0.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;

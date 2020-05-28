@@ -43,7 +43,7 @@ const StyledIcon = styled.div`
   height: 2rem;
   background: transparent;
   cursor: pointer;
-  z-index: 20;
+  z-index: 50;
 
   &:focus {
     outline: none;
