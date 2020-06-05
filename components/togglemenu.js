@@ -1,19 +1,33 @@
 import React from "react";
+import Link from "next/link";
 import styled from "styled-components";
-import { bool } from "prop-types";
+import { bool, func } from "prop-types";
 
-const ToggleMenu = ({ open }) => {
+const ToggleMenu = ({ open, setOpen }) => {
   return (
     <StyledMenu
       open={open}
       className="absolute z-40 top-0 left-0 bg-dark h-screen"
     >
-      <div className="flex flex-col relative ml-2 mr-8 my-16">
-        <a href="/index">Home</a>
-        <a href="/portfolio">Portfolio</a>
-        <a href="/index">Interaction</a>
-        <a href="/index">Resume</a>
-        <a href="/index">Contact</a>
+      <div
+        onClick={() => setOpen(!open)}
+        className="flex flex-col relative ml-2 mr-8 my-16"
+      >
+        <Link href="/index">
+          <a>Home</a>
+        </Link>
+        <Link href="/portfolio">
+          <a>Portfolio</a>
+        </Link>
+        <Link href="/interaction">
+          <a>Interaction</a>
+        </Link>
+        <Link href="/index">
+          <a>Resume</a>
+        </Link>
+        <Link href="/index">
+          <a>Contact</a>
+        </Link>
       </div>
     </StyledMenu>
   );
@@ -21,6 +35,7 @@ const ToggleMenu = ({ open }) => {
 
 ToggleMenu.propTypes = {
   open: bool.isRequired,
+  setOpen: func.isRequired,
 };
 
 const StyledMenu = styled.div`

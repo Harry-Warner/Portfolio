@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styled from "styled-components";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -16,10 +17,26 @@ const Index = () => {
       </h1>
       <StyledBox className="flex mx-auto py-1 px-1 bg-darkT">
         <div className="grid grid-rows-1 md:grid-cols-2 md:grid-rows-2 h-full">
-          <StyledNav href="/portfolio">Portfolio</StyledNav>
-          <StyledNav>Interaction</StyledNav>
-          <StyledNav>Resume</StyledNav>
-          <StyledNav>Contact</StyledNav>
+          <StyledNav>
+            <Link href="/portfolio">
+              <a>Portfolio</a>
+            </Link>
+          </StyledNav>
+          <StyledNav>
+            <Link href="/interaction">
+              <a>Interaction</a>
+            </Link>
+          </StyledNav>
+          <StyledNav>
+            <Link href="/index">
+              <a>Resume</a>
+            </Link>
+          </StyledNav>
+          <StyledNav>
+            <Link href="/">
+              <a>Contact</a>
+            </Link>
+          </StyledNav>
         </div>
         <div className="about flex flex-col px-4 bg-dark font-sans">
           <img
@@ -75,19 +92,23 @@ const StyledBox = styled.div`
   }
 `;
 
-const StyledNav = styled.a`
+const StyledNav = styled.div`
   width: 200px;
   height: 200px;
   margin: 5px;
   background: #3f3f44;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #f7f7f7;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 800;
+  a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
   @media (max-width: 700px) {
     width: 100px;
