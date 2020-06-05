@@ -25,7 +25,7 @@ const ToggleMenu = ({ open, setOpen }) => {
         <Link href="/index">
           <a>Resume</a>
         </Link>
-        <Link href="/index">
+        <Link href="/contact">
           <a>Contact</a>
         </Link>
       </div>

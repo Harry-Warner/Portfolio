@@ -33,7 +33,7 @@ const Index = () => {
             </Link>
           </StyledNav>
           <StyledNav>
-            <Link href="/">
+            <Link href="contact">
               <a>Contact</a>
             </Link>
           </StyledNav>

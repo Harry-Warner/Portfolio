@@ -17,6 +17,9 @@ module.exports = {
         "1": "0.25rem",
         vtight: "0.125rem",
       },
+      borderRadius: {
+        xl: "16px",
+      },
     },
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],
