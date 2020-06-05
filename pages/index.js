@@ -23,8 +23,8 @@ const Index = () => {
             </Link>
           </StyledNav>
           <StyledNav>
-            <Link href="/interaction">
-              <a>Interaction</a>
+            <Link href="/publicplaylist">
+              <a>Public Playlist</a>
             </Link>
           </StyledNav>
           <StyledNav>

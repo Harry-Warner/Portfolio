@@ -12,6 +12,11 @@ module.exports = {
         skin: "#fdcb9e",
         skinT: "rgba(253, 203, 158, .75)",
       },
+      lineHeight: {
+        "2": "0.5rem",
+        "1": "0.25rem",
+        vtight: "0.125rem",
+      },
     },
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],

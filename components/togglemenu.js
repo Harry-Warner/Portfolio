@@ -19,8 +19,8 @@ const ToggleMenu = ({ open, setOpen }) => {
         <Link href="/portfolio">
           <a>Portfolio</a>
         </Link>
-        <Link href="/interaction">
-          <a>Interaction</a>
+        <Link href="/publicplaylist">
+          <a>Public Playlist</a>
         </Link>
         <Link href="/index">
           <a>Resume</a>
@@ -41,7 +41,7 @@ ToggleMenu.propTypes = {
 const StyledMenu = styled.div`
   width: fit-content;
   transition: all 0.3s ease-in-out;
-  left: ${({ open }) => (open ? "0" : "-218px")};
+  left: ${({ open }) => (open ? "0" : "-261px")};
   font-size: 20px;
   letter-spacing: 3px;
 
