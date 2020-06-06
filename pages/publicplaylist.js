@@ -7,7 +7,7 @@ const PlayList = () => {
   const { data, error } = useSWR(`/api/posts`, fetcher);
 
   if (error) return <div>{error.message}</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <div className="text-center">Loading...</div>;
   return (
     <>
       <h1 className="w-11/12 md:w-2/3 lg:w-1/2 uppercase font-bold mx-auto my-10 tracking-widest text-2xl text-dark">
@@ -55,13 +55,13 @@ const PlayList = () => {
           type="text"
           name="artist"
           placeholder="New Artist"
-          className="h-8 w-24 md:w-32 lg:w-40 xl:w-48 px-2 bg-cream self-center text-darkT placeholder-dark border-b-2 border-dark border-solid bg-opacity-0"
+          className="h-8 w-24 md:w-32 lg:w-40 xl:w-48 px-2 bg-cream self-center text-dark placeholder-darkT border-b-2 border-dark border-solid bg-opacity-0"
         />
         <input
           type="text"
           name="song"
           placeholder="New Song"
-          className="h-8 w-24 md:w-32 lg:w-40 xl:w-48 px-2 bg-cream self-center text-darkT placeholder-dark border-b-2 border-dark border-solid bg-opacity-0"
+          className="h-8 w-24 md:w-32 lg:w-40 xl:w-48 px-2 bg-cream self-center text-dark placeholder-darkT border-b-2 border-dark border-solid bg-opacity-0"
         />
         <button
           name="id"
