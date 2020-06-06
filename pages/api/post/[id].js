@@ -12,6 +12,9 @@ export default (req, res) => {
       res.status(400);
       res.send("Please fill all fields");
       deleteEntityById("posts", req.query.id);
+      // Returning here means that nothing else can happen
+      // once we've sent the error message
+      return;
     }
     res.json(postData);
   } else if (req.method === "DELETE") {

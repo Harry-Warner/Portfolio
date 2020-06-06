@@ -1,10 +1,20 @@
 import React from "react";
 import useSWR from "swr";
+import { useForm } from "react-hook-form";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const PlayList = () => {
   const { data, error } = useSWR(`/api/posts`, fetcher);
+
+  const { register, handleSubmit } = useForm();
+
+  const sendDataToApi = (data) => {
+    console.log(data);
+    // `/api/post/${data.length + 1}`
+    // Send a POST request to that URL with the data, then
+    // refetch using SWR
+  };
 
   if (error) return <div>{error.message}</div>;
   if (!data) return <div className="text-center">Loading...</div>;
@@ -47,18 +57,19 @@ const PlayList = () => {
         ))}
       </div>
       <form
-        method="POST"
-        action={`/api/post/${data.length + 1}`}
+        onSubmit={handleSubmit(sendDataToApi)}
         className="w-11/12 md:w-2/3 lg:w-1/2 mx-auto text-center my-10 flex justify-between"
       >
         <input
           type="text"
           name="artist"
+          ref={register}
           placeholder="New Artist"
           className="h-8 w-24 md:w-32 lg:w-40 xl:w-48 px-2 bg-cream self-center text-dark placeholder-darkT border-b-2 border-dark border-solid bg-opacity-0"
         />
         <input
           type="text"
+          ref={register}
           name="song"
           placeholder="New Song"
           className="h-8 w-24 md:w-32 lg:w-40 xl:w-48 px-2 bg-cream self-center text-dark placeholder-darkT border-b-2 border-dark border-solid bg-opacity-0"
