@@ -25,10 +25,14 @@ const StyledName = styled.h1`
   z-index: 50;
   transition: left 0.3s ease-in-out;
   left: ${({ open }) => (open ? "3.5rem" : "4.5rem")};
-  top: 20px;
+  top: 7.5px;
   font-size: 17.5px;
   text-transform: uppercase;
   color: ${({ open }) => (open ? "rgba(247, 247, 247, .75)" : "#3f3f44")};
+
+  @media (min-width: 768px) {
+    top: 20px;
+  }
 `;
 
 const StyledIcon = styled.div`
