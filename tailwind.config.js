@@ -11,6 +11,7 @@ module.exports = {
         darkT: "rgba(63, 63, 68, .75)",
         skin: "#fdcb9e",
         skinT: "rgba(253, 203, 158, .75)",
+        red: "red",
       },
       lineHeight: {
         "2": "0.5rem",
