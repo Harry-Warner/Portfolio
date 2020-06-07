@@ -16,15 +16,15 @@ const PlayList = () => {
         method: "DELETE",
         body: JSON.stringify(deleteId),
       });
-      mutate();
       setDeleteId(0);
     }
+    mutate();
   }, [deleteId]);
 
   const sendDataToApi = async (newData) => {
-    newData.id = data.length + 1;
+    newData.id = data.slice(-1)[0].id + 1;
 
-    await fetch(`/api/post/${data.length + 1}`, {
+    await fetch(`/api/post/${data.slice(-1)[0].id + 1}`, {
       method: "POST",
       body: JSON.stringify(newData),
     });
@@ -40,7 +40,7 @@ const PlayList = () => {
   if (!data) return <div className="text-center">Loading...</div>;
   return (
     <>
-      <h1 className="w-11/12 md:w-2/3 lg:w-1/2 uppercase font-bold mx-auto my-10 tracking-widest text-2xl text-dark">
+      <h1 className="w-11/12 md:w-2/3 lg:w-1/2 my-10 mx-auto uppercase font-bold tracking-widest text-2xl text-dark">
         Playlist
       </h1>
       <div className="w-11/12 md:w-2/3 lg:w-1/2 mx-auto my-6 border-b-2 border-dark border-solid">
@@ -60,7 +60,7 @@ const PlayList = () => {
         {data.map((e) => (
           <li key={e.id} className="flex justify-between my-2">
             <p className="text-dark px-1 w-24 md:w-32 lg:w-40 xl:w-48">
-              {e.artist}:
+              {e.artist}
             </p>
             <p className="text-dark px-1 w-24 md:w-32 lg:w-40 xl:w-48">
               {e.song}
