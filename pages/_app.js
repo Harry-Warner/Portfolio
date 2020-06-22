@@ -3,7 +3,6 @@ import App from "next/app";
 import Head from "next/head";
 import "../styled/tailwind.css";
 import GlobalStyle from "../styled/global";
-import Nav from "../components/nav";
 
 class MyApp extends App {
   render() {
@@ -18,7 +17,6 @@ class MyApp extends App {
           <title>Harry Warner</title>
         </Head>
         <GlobalStyle />
-        <Nav />
         <Component {...pageProps} />
       </>
     );

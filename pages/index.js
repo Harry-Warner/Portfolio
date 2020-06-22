@@ -8,73 +8,49 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import LanguageIcon from "@material-ui/icons/Language";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import WorkIcon from "@material-ui/icons/Work";
+import MobileNav from "../components/mobileNav";
+import LargeNav from "../components/largeNav";
+import Colors from "../styled/colors";
+import Portfolio from "../components/portfolio";
+import Resume from "../components/resume";
+import Contact from "../components/contact";
+import Footer from "../components/footer";
 
 const Index = () => {
   return (
     <>
-      <h1 className="uppercase text-center font-bold text-3xl md:text-5xl font-sans text-dark my-2 md:my-6">
-        Welcome to <br className="md:hidden" /> my portfolio
-      </h1>
-      <StyledBox className="flex mx-auto py-1 px-1 bg-darkT">
-        <div className="grid grid-rows-1 md:grid-cols-2 md:grid-rows-2 h-full">
-          <StyledNav>
-            <Link href="/portfolio">
-              <a>Portfolio</a>
-            </Link>
-          </StyledNav>
-          <StyledNav>
-            <Link href="/publicplaylist">
-              <a>Public Playlist</a>
-            </Link>
-          </StyledNav>
-          <StyledNav>
-            <Link href="/index">
-              <a>Resume</a>
-            </Link>
-          </StyledNav>
-          <StyledNav>
-            <Link href="contact">
-              <a>Contact</a>
-            </Link>
-          </StyledNav>
+      <MobileNav />
+      <LargeNav />
+      <section className="w-full h-screen min-h-screen">
+        <div className="pb-4 w-full h-7/12 bg-teal flex flex-col justify-center items-center">
+          <h1 className="font-sans text-center text-dark text-4xl md:text-6xl">
+            Front End Developer
+          </h1>
+          <h3 className="pb-10 md:pb-0 font-sans text-center text-dark italic text-base md:text-xl uppercase">
+            Turning ideas into reality
+          </h3>
         </div>
-        <div className="about flex flex-col px-4 bg-dark font-sans">
+        <div className="relative w-full h-5/12 bg-dark flex flex-col justify-center items-center">
           <img
-            className="my-4 w-40 h-40 mx-auto rounded-full"
-            src="harry.jpg"
-            alt="profile pic"
+            src="./harry.jpg"
+            className="absolute -top-20 rounded-full h-40 md:h-48 w-40 md:w-48"
+            alt="Profile picture of Harry with Edinburgh city as the backdrop"
           />
-          <div className="flex items-center py-2">
-            <PermIdentityIcon style={{ color: "#f7f7f7" }} />
-            <p className="text-base text-cream font-sans ml-1">Harry Warner</p>
-          </div>
-          <div className="flex items-center py-2">
-            <WorkIcon style={{ color: "#f7f7f7" }} />
-            <p className="text-base text-cream font-sans ml-1">
-              Front end developer
-            </p>
-          </div>
-          <div className="flex items-center py-2">
-            <LanguageIcon style={{ color: "#f7f7f7" }} />
-            <p className="text-base text-cream font-sans ml-1">React</p>
-          </div>
-          <a href="https://www.google.co.uk/maps/place/Lancaster/@54.0441576,-2.8361624,13z/data=!3m1!4b1!4m5!3m4!1s0x487b6141d2138751:0xbea089595c0b389!8m2!3d54.0465742!4d-2.8007412?expflags=__data_rollout__Tactile.IsDogfoodRollout__launched__%3Afalse%2C__data_rollout__Tactile.IsFishfoodRollout__launched__%3Afalse">
-            <div className="flex items-center py-2">
-              <LocationOnIcon style={{ color: "#f7f7f7" }} />
-              <p className="text-base text-cream font-sans ml-1">
-                Lancaster, UK
-              </p>
-            </div>
-          </a>
-          <div className="py-3 px-10 w-full flex justify-around items-center">
-            <a href="https://github.com/Harry-Warner">
-              <GitHubIcon style={{ color: "#f7f7f7" }} />
-            </a>
-            <InstagramIcon style={{ color: "#f7f7f7" }} />
-            <TwitterIcon style={{ color: "#f7f7f7" }} />
-          </div>
+          <h2 className="mt-10 text-2xl md:text-4xl text-center text-cream font-sans">
+            Harry Warner
+          </h2>
+          <h4 className="text-sm md:text-xl text-center text-cream font-sans px-4 lg:px-10 py-2">
+            Hello and welcome to my portfolio. I'm a junior front end developer
+            looking to find a team who will push me to my limits and beyond!
+            Learning new technologies is my passion and excellence is my virtue.
+            I have worked mostly with React based apps.
+          </h4>
         </div>
-      </StyledBox>
+      </section>
+      <Portfolio />
+      <Resume />
+      <Contact />
+      <Footer />
     </>
   );
 };

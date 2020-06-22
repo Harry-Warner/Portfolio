@@ -12,9 +12,16 @@ const DeployProjects = ({ open }) => {
         <div></div>
         <h1>Veggiessimo</h1>
         <p>
-          A blog platform for two vegetarian chefs to post recipes and
-          environmental concerns to viewers. Using Sanity for the content
-          backend and the React based framework Next JS for the site rendering.
+          Milly and Maria needed a website to expand their Veggiessimo brand.
+          They needed complete control over content and a platform for people to
+          subscribe to their newsletters.
+          <br />
+          <br />I approached them with my idea to build them a website from
+          scratch with a Sanity headless CMS. They sent me their ideas for web
+          design and using React and Next JS I gave them everything they wanted
+          and more. Now they are posting recipes and blogs regularly onto an
+          awesome website and gaining subscribers without ever having spent a
+          penny!
         </p>
         <a href="https://github.com/Harry-Warner/Veggiessimo-repo">GitHub</a>
       </div>

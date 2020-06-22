@@ -11,7 +11,7 @@ const ToggleMenu = ({ open, setOpen }) => {
     >
       <div
         onClick={() => setOpen(!open)}
-        className="flex flex-col relative ml-2 mr-8 my-16"
+        className="flex flex-col items-center justify-center text-center w-full h-full box-border relative"
       >
         <Link href="/index">
           <a>Home</a>
@@ -39,14 +39,15 @@ ToggleMenu.propTypes = {
 };
 
 const StyledMenu = styled.div`
-  width: fit-content;
+  width: 100%;
   transition: all 0.3s ease-in-out;
-  left: ${({ open }) => (open ? "0" : "-261px")};
+  left: ${({ open }) => (open ? "0" : "-100%")};
   font-size: 20px;
   letter-spacing: 3px;
 
   a {
-    padding: 10px 10px 10px 7.5px;
+    width: 100%;
+    padding: 1rem;
     color: #f7f7f7;
     text-transform: uppercase;
     cursor: pointer;

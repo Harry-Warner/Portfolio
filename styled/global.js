@@ -9,12 +9,8 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
   };
   body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 100%;
     margin: 0;
-    background: rgba(204, 234, 187, .75);
   };
 `;
 
