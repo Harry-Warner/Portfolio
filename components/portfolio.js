@@ -4,7 +4,7 @@ import Project from "./project";
 const Portfolio = () => {
   return (
     <>
-      <section id="portfolio" className="bg-cream">
+      <section name="portfolio" className="bg-cream">
         <h1 className="text-5xl text-dark text-center text-cream font-sans pt-20">
           Portfolio
         </h1>

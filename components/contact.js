@@ -4,10 +4,14 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import { Link } from "react-scroll";
 
 const Contact = () => {
   return (
-    <section className="h-screen w-full flex flex-col lg:flex-row justify-around items-center bg-teal pt-12">
+    <section
+      name="contact"
+      className="relative sm:h-screen w-full flex flex-col lg:flex-row justify-around items-center bg-teal pt-12"
+    >
       <StyledDiv className="w-full text-center text-dark mx-auto flex flex-col items-center lg:hidden">
         <h1 className="text-4xl uppercase">Get in touch!</h1>
         <p className="w-7/12 text-base my-3">
@@ -23,7 +27,7 @@ const Contact = () => {
         </div>
       </StyledDiv>
       <StyledDiv>
-        <form className="mx-auto w-84 flex flex-col mx-2">
+        <form className="my-20 lg:my-0 mx-auto w-64 sm:w-84 flex flex-col mx-2">
           <input
             type="text"
             name="name"
@@ -66,6 +70,17 @@ const Contact = () => {
           <LinkedInIcon />
         </div>
       </StyledDiv>
+      <Link
+        to="home"
+        activeClass="active"
+        duration={500}
+        spy={true}
+        smooth={true}
+        scroll={true}
+        className="text-dark my-8 absolute w-full text-center underline bottom-0 text-base cursor-pointer"
+      >
+        Back to top
+      </Link>
     </section>
   );
 };

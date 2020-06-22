@@ -21,7 +21,7 @@ const Index = () => {
     <>
       <MobileNav />
       <LargeNav />
-      <section className="w-full h-screen min-h-screen">
+      <section name="home" className="w-full h-screen min-h-screen">
         <div className="pb-4 w-full h-7/12 bg-teal flex flex-col justify-center items-center">
           <h1 className="font-sans text-center text-dark text-4xl md:text-6xl">
             Front End Developer

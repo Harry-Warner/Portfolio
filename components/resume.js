@@ -2,10 +2,13 @@ import React from "react";
 
 const Resume = () => {
   return (
-    <section className="flex flex-col w-full justify-center items-center pt-12 bg-dark md:h-screen">
+    <section
+      name="resume"
+      className="flex flex-col w-full justify-center items-center pt-12 bg-dark md:h-screen"
+    >
       <h1 className="text-4xl text-center text-cream pb-10">Resume</h1>
       <div className="flex flex-col md:flex-row w-full justify-around items-center">
-        <div className="px-3 md:px-0 w-full md:w-5/12 flex flex-col text-center text-cream">
+        <div className="px-3 md:px-0 mx-auto w-full md:w-5/12 flex flex-col text-center text-cream">
           <div className="md:hidden mx-auto w-11/12 md:w-4/12 h-100 bg-skin" />
           <h1 className="mt-4 md:mt-0 text-2xl">About Me</h1>
           <p className="mb-4 md:mb-4 text-base">

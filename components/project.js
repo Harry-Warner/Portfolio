@@ -5,7 +5,7 @@ const Project = (props) => {
   return (
     <div
       id={props.playlist ? "playlist" : ""}
-      className="box-border w-full py-20 flex flex-col sm:flex-row justify-center items-center"
+      className="box-border w-full py-10 md:py-20 flex flex-col sm:flex-row justify-center items-center"
     >
       {props.left ? (
         <div className="hidden sm:block mx-6 w-5/12 h-100 bg-dark" />
@@ -15,10 +15,10 @@ const Project = (props) => {
       <div className="mb-4 sm:mb-0 mx-2 sm:mx-6 w-full sm:w-7/12 flex flex-col text-dark text-center">
         <h1 className="text-4xl">{props.title}</h1>
         <div className="my-5">
-          <p className="mb-5">
+          <p className="mb-5 px-2">
             <strong>Tech Stack:</strong> {props.techStack}
           </p>
-          <p className="w-11/12 mx-auto text-base box-border">
+          <p className="px-2 w-11/12 mx-auto text-base box-border">
             {props.description}
           </p>
         </div>

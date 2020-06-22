@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 
 const LargeNav = () => {
   const [header, setHeader] = useState("bg-teal text-dark");
@@ -22,13 +23,43 @@ const LargeNav = () => {
         className={`${header} z-50 uppercase hidden sm:flex fixed top-0 h-12 w-full bg-teal justify-end items-center px-4`}
       >
         <div className="flex items-center h-full">
-          <h4 className="font-bold px-4">Portfolio</h4>
+          <Link
+            to="portfolio"
+            activeClass="active"
+            duration={500}
+            spy={true}
+            smooth={true}
+            scroll={true}
+            className="font-bold px-4 cursor-pointer"
+          >
+            Portfolio
+          </Link>
         </div>
         <div className="flex items-center h-full">
-          <h4 className="font-bold px-4">Resume</h4>
+          <Link
+            to="resume"
+            activeClass="active"
+            duration={500}
+            spy={true}
+            smooth={true}
+            scroll={true}
+            className="font-bold px-4 cursor-pointer"
+          >
+            Resume
+          </Link>
         </div>
         <div className="flex items-center h-full">
-          <h4 className="font-bold px-4">Contact</h4>
+          <Link
+            to="contact"
+            activeClass="active"
+            duration={500}
+            spy={true}
+            smooth={true}
+            scroll={true}
+            className="font-bold px-4 cursor-pointer"
+          >
+            Contact
+          </Link>
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import styled from "styled-components";
 import { bool, func } from "prop-types";
 
@@ -13,20 +13,41 @@ const ToggleMenu = ({ open, setOpen }) => {
         onClick={() => setOpen(!open)}
         className="flex flex-col items-center justify-center text-center w-full h-full box-border relative"
       >
-        <Link href="/index">
-          <a>Home</a>
+        <Link
+          open={open}
+          onClick={() => setOpen(!open)}
+          to="portfolio"
+          activeClass="active"
+          duration={500}
+          spy={true}
+          smooth={true}
+          scroll={true}
+        >
+          Portfolio
         </Link>
-        <Link href="/portfolio">
-          <a>Portfolio</a>
+        <Link
+          open={open}
+          onClick={() => setOpen(!open)}
+          to="resume"
+          activeClass="active"
+          duration={500}
+          spy={true}
+          smooth={true}
+          scroll={true}
+        >
+          Resume
         </Link>
-        <Link href="/publicplaylist">
-          <a>Public Playlist</a>
-        </Link>
-        <Link href="/index">
-          <a>Resume</a>
-        </Link>
-        <Link href="/contact">
-          <a>Contact</a>
+        <Link
+          open={open}
+          onClick={() => setOpen(!open)}
+          to="contact"
+          activeClass="active"
+          duration={500}
+          spy={true}
+          smooth={true}
+          scroll={true}
+        >
+          Contact
         </Link>
       </div>
     </StyledMenu>
