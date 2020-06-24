@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import Project from "./project";
+import { func } from "prop-types";
+import PortHeightContext from "../lib/portHeightContext";
 
 const Portfolio = () => {
+  const { setPortHeight } = useContext(PortHeightContext);
+
+  const measuredRef = useCallback((node) => {
+    if (node !== null) {
+      setPortHeight(node.getBoundingClientRect().height);
+    }
+  }, []);
+
   return (
     <>
-      <section name="portfolio" className="bg-cream">
+      <section ref={measuredRef} name="portfolio" className="bg-cream">
         <h1 className="text-5xl text-dark text-center text-cream font-sans pt-20">
           Portfolio
         </h1>
-        <h2 className="text-xl text-dark text-center text-cream font-sans w-11/12 sm:w-2/3 mx-auto">
+        <h2 className="text-xl text-dark text-center text-cream font-sans w-11/12 lg:w-3/4 mx-auto">
           Below you will find my projects to date. Starting with two websites
           for clients and finishing with an experimental project of mine.
         </h2>
@@ -47,4 +57,9 @@ const Portfolio = () => {
     </>
   );
 };
+
+Portfolio.propTypes = {
+  setPortHeight: func.isRequired,
+};
+
 export default Portfolio;

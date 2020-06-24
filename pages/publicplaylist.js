@@ -47,7 +47,10 @@ const PlayList = () => {
     <>
       <section className="w-full h-screen bg-teal relative flex flex-col items-center justify-center">
         <Link href="/index#playlist" scroll={false}>
-          <a href="/index" className="absolute top-0 left-0 m-10 underline">
+          <a
+            href="/index"
+            className="absolute top-0 left-1/12 my-5 md:my-10 -translate-x-1/2 w-11/12 underline"
+          >
             Return to portfolio
           </a>
         </Link>

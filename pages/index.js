@@ -1,56 +1,74 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import TwitterIcon from "@material-ui/icons/Twitter";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import LanguageIcon from "@material-ui/icons/Language";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import WorkIcon from "@material-ui/icons/Work";
 import MobileNav from "../components/mobileNav";
 import LargeNav from "../components/largeNav";
-import Colors from "../styled/colors";
 import Portfolio from "../components/portfolio";
 import Resume from "../components/resume";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
+import PortHeightContext from "../lib/portHeightContext";
+import ResHeightContext from "../lib/resHeightContext";
 
 const Index = () => {
+  const [portHeight, setPortHeight] = useState(0);
+  const [resHeight, setResHeight] = useState(0);
+
+  const resValue = useMemo(() => ({ resHeight, setResHeight }), [
+    resHeight,
+    setResHeight,
+  ]);
+
+  const portValue = useMemo(() => ({ portHeight, setPortHeight }), [
+    portHeight,
+    setPortHeight,
+  ]);
+
+  console.log(resHeight);
+
   return (
     <>
-      <MobileNav />
-      <LargeNav />
-      <section name="home" className="w-full h-screen min-h-screen">
-        <div className="pb-4 w-full h-7/12 bg-teal flex flex-col justify-center items-center">
-          <h1 className="font-sans text-center text-dark text-4xl md:text-6xl">
-            Front End Developer
-          </h1>
-          <h3 className="pb-10 md:pb-0 font-sans text-center text-dark italic text-base md:text-xl uppercase">
-            Turning ideas into reality
-          </h3>
-        </div>
-        <div className="relative w-full h-5/12 bg-dark flex flex-col justify-center items-center">
-          <img
-            src="./harry.jpg"
-            className="absolute -top-20 rounded-full h-40 md:h-48 w-40 md:w-48"
-            alt="Profile picture of Harry with Edinburgh city as the backdrop"
-          />
-          <h2 className="mt-10 text-2xl md:text-4xl text-center text-cream font-sans">
-            Harry Warner
-          </h2>
-          <h4 className="text-sm md:text-xl text-center text-cream font-sans px-4 lg:px-10 py-2">
-            Hello and welcome to my portfolio. I'm a junior front end developer
-            looking to find a team who will push me to my limits and beyond!
-            Learning new technologies is my passion and excellence is my virtue.
-            I have worked mostly with React based apps.
-          </h4>
-        </div>
-      </section>
-      <Portfolio />
-      <Resume />
-      <Contact />
-      <Footer />
+      <PortHeightContext.Provider value={portValue}>
+        <ResHeightContext.Provider value={resValue}>
+          <MobileNav />
+          <LargeNav />
+          <section name="home" className="w-full h-screen min-h-screen">
+            <div className="pb-4 w-full h-7/12 bg-teal flex flex-col justify-center items-center">
+              <h1 className="font-sans text-center text-dark text-4xl md:text-6xl">
+                Front End Developer
+              </h1>
+              <h3 className="pb-10 md:pb-0 font-sans text-center text-dark italic text-base md:text-xl uppercase">
+                Turning ideas into reality
+              </h3>
+            </div>
+            <div className="relative w-full h-5/12 bg-dark flex flex-col justify-center items-center">
+              <img
+                src="./harry.jpg"
+                className="absolute -top-20 rounded-full h-40 md:h-48 w-40 md:w-48"
+                alt="Profile picture of Harry with Edinburgh city as the backdrop"
+              />
+              <h2 className="mt-10 text-2xl md:text-4xl text-center text-cream font-sans">
+                Harry Warner
+              </h2>
+              <h4 className="text-sm md:text-xl text-center text-cream font-sans px-4 lg:px-10 py-2">
+                Hello and welcome to my portfolio. I'm a junior front end
+                developer looking to find a team who will push me to my limits
+                and beyond! Learning new technologies is my passion and
+                excellence is my virtue. I have worked mostly with React based
+                apps.
+              </h4>
+            </div>
+          </section>
+          <Portfolio />
+          <Resume />
+          <Contact />
+          <Footer />
+        </ResHeightContext.Provider>
+      </PortHeightContext.Provider>
     </>
   );
 };

@@ -14,7 +14,7 @@ const Contact = () => {
     >
       <StyledDiv className="w-full text-center text-dark mx-auto flex flex-col items-center lg:hidden">
         <h1 className="text-4xl uppercase">Get in touch!</h1>
-        <p className="w-7/12 text-base my-3">
+        <p className="w-11/12 md:w-7/12 text-base my-3">
           Drop me an email from the below form, email me directly at
           harry.e.p.warner@gmail.com, give me a call on 07901676166 or reach out
           to me from any of the below social platforms.
@@ -64,10 +64,18 @@ const Contact = () => {
           to me from any of the below social platforms.
         </p>
         <div className="flex justify-around items-center mt-2 mx-auto w-1/3">
-          <GitHubIcon />
-          <TwitterIcon />
-          <InstagramIcon />
-          <LinkedInIcon />
+          <a href="https://github.com/Harry-Warner">
+            <GitHubIcon />
+          </a>
+          <a href="https://www.twitter.com/harrywarner7/">
+            <TwitterIcon />
+          </a>
+          <a href="https://www.instagram.com/harrywarner7/">
+            <InstagramIcon />
+          </a>
+          <a href="https://www.linkedin.com/in/harry-warner-a78554153/">
+            <LinkedInIcon />
+          </a>
         </div>
       </StyledDiv>
       <Link

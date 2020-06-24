@@ -1,4 +1,4 @@
-export const Colors = {
+const Colors = {
   cream: "#f7f7f7",
   creamT: "rgba(247, 247, 247, .75)",
   teal: "#cceabb",
@@ -9,3 +9,5 @@ export const Colors = {
   skinT: "rgba(253, 203, 158, .75)",
   red: "red",
 };
+
+export default Colors;
