@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [],
+  purge: false,
   theme: {
     extend: {
       colors: {
@@ -23,7 +23,6 @@ module.exports = {
         "2/3": "66.66%",
         "84": "21rem",
         "100": "25rem",
-        fit: "fit-content",
         "1/2": "50%",
         "5/12": "41.666667%",
         "7/12": "58.33333%",

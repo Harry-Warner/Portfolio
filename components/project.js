@@ -27,20 +27,20 @@ const Project = (props) => {
         </div>
         <div className="flex justify-center w-full">
           <a
-            className="py-1 px-3 bg-skinT hover:bg-dark hover:text-skin border-dark border-2 border-solid w-fit rounded-lg"
+            className="py-1 px-3 bg-skinT hover:bg-dark hover:text-skin border-dark border-2 border-solid rounded-lg"
             href={props.github}
           >
             GitHub
           </a>
           {props.internal ? (
             <Link href="/publicplaylist">
-              <a className="ml-4 py-1 px-3 bg-skinT hover:bg-dark hover:text-skin border-dark border-2 border-solid w-fit rounded-lg">
+              <a className="ml-4 py-1 px-3 bg-skinT hover:bg-dark hover:text-skin border-dark border-2 border-solid rounded-lg">
                 Website
               </a>
             </Link>
           ) : (
             <a
-              className="ml-4 py-1 px-3 bg-skinT hover:bg-dark hover:text-skin border-dark border-2 border-solid w-fit rounded-lg"
+              className="ml-4 py-1 px-3 bg-skinT hover:bg-dark hover:text-skin border-dark border-2 border-solid rounded-lg"
               href={props.url}
             >
               Website

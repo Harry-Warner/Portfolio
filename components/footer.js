@@ -14,13 +14,13 @@ const Footer = () => {
       <div className="flex">
         <a
           href="https://github.com/Harry-Warner"
-          className="py-1 px-3 bg-blackT shadow-lg m-3 w-fit rounded-lg hover:bg-skinT hover:text-dark"
+          className="py-1 px-3 bg-blackT shadow-lg m-3 rounded-lg hover:bg-skinT hover:text-dark"
         >
           GitHub
         </a>
         <a
           href="https://www.linkedin.com/in/harry-warner-a78554153/"
-          className="py-1 px-3 bg-blackT shadow-lg m-3 w-fit rounded-lg hover:bg-skinT hover:text-dark"
+          className="py-1 px-3 bg-blackT shadow-lg m-3 rounded-lg hover:bg-skinT hover:text-dark"
         >
           LinkedIn
         </a>
