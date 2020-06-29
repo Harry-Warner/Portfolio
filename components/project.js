@@ -8,7 +8,10 @@ const Project = (props) => {
       className="box-border w-full py-10 md:py-20 flex flex-col md:flex-row justify-center items-center"
     >
       {props.left ? (
-        <div className="hidden md:block mx-6 w-5/12 h-100 bg-dark" />
+        <img
+          src={`/pc-${props.project}.png`}
+          className="hidden md:block mx-6 w-5/12 h-100 object-contain"
+        />
       ) : (
         ""
       )}
@@ -46,9 +49,15 @@ const Project = (props) => {
         </div>
       </div>
       {props.right ? (
-        <div className="mx-2 md:mx-6 w-11/12 md:w-5/12 h-100 bg-dark" />
+        <img
+          src={`/pc-${props.project}.png`}
+          className="mx-2 md:mx-6 w-11/12 md:w-5/12 h-100 object-contain"
+        />
       ) : (
-        <div className="md:hidden mx-2 w-11/12 h-100 bg-dark" />
+        <img
+          src={`/pc-${props.project}.png`}
+          className="md:hidden mx-2 w-11/12 h-100 object-contain"
+        />
       )}
     </div>
   );

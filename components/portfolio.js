@@ -24,6 +24,7 @@ const Portfolio = () => {
         </h2>
         <Project
           left
+          project={"veggiessimo"}
           title={"Veggiessimo"}
           github={"https://github.com/Harry-Warner/Veggiessimo-repo"}
           url={"https://veggiessimo.com.au"}
@@ -34,6 +35,7 @@ const Portfolio = () => {
         />
         <Project
           right
+          project={"martin"}
           title={"Martin Ross Pringle"}
           github={"https://github.com/Harry-Warner/Martin-Ross-Pringle"}
           url={"https://martinrosspringle.co.uk"}
@@ -47,6 +49,7 @@ const Portfolio = () => {
           github={
             "https://github.com/Harry-Warner/Portfolio/blob/master/pages/publicplaylist.js"
           }
+          project={"playlist"}
           title={"Music Playlist Project"}
           techStack={
             "React, TypeScript, Next JS, Node JS, Tailwind CSS, Styled-Components"
