@@ -3,5 +3,4 @@ node_modules
 .next
 
 db.json
-# Local Netlify folder
-.netlify
+.vercel
