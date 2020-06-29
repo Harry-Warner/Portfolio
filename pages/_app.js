@@ -15,6 +15,11 @@ class MyApp extends App {
             rel="stylesheet"
           />
           <title>Harry Warner</title>
+          <meta
+            name="description"
+            content="I'm a front end developer looking to find a team who will push me to my limits and beyond! Learning new technologies is my passion and excellence is my virtue. I have worked mostly with React based apps."
+          />
+          <meta name="robots" content="index, follow" />
         </Head>
         <GlobalStyle />
         <Component {...pageProps} />

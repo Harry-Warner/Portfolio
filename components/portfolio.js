@@ -15,12 +15,12 @@ const Portfolio = () => {
   return (
     <>
       <section ref={measuredRef} name="portfolio" className="bg-cream">
-        <h1 className="text-5xl text-dark text-center text-cream font-sans pt-20">
+        <h1 className="text-5xl text-dark text-center font-sans pt-20">
           Portfolio
         </h1>
-        <h2 className="text-xl text-dark text-center text-cream font-sans w-11/12 lg:w-3/4 mx-auto">
-          Below you will find my projects to date. Starting with two websites
-          for clients and finishing with an experimental project of mine.
+        <h2 className="text-xl text-dark text-center font-sans w-11/12 lg:w-3/4 mx-auto">
+          Below you will find my projects to date. Starting with two freelance
+          clients and finishing with a personal project of mine.
         </h2>
         <Project
           left

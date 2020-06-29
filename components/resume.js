@@ -33,7 +33,7 @@ const Resume = () => {
             <br />
             <br />
             While abroad I couldnt get the idea of a career in web development
-            out of my head. Immediately after returning to the UK I got to work.
+            out of my mind. Immediately after returning to the UK I got to work.
             From when I wrote my first line of code to now I have been glued to
             my computer eager to learn more. My Mathematical background - which
             has given me fundamental problem solving skills - and my eagerness

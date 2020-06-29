@@ -55,11 +55,10 @@ const Index = () => {
                 Harry Warner
               </h2>
               <h4 className="text-sm md:text-xl text-center text-cream font-sans px-4 lg:px-10 py-2">
-                Hello and welcome to my portfolio. I'm a junior front end
-                developer looking to find a team who will push me to my limits
-                and beyond! Learning new technologies is my passion and
-                excellence is my virtue. I have worked mostly with React based
-                apps.
+                Hello and welcome to my portfolio. I'm a front end developer
+                looking to find a team who will push me to my limits and beyond!
+                Learning new technologies is my passion and excellence is my
+                virtue. I have worked mostly with React based apps.
               </h4>
             </div>
           </section>
