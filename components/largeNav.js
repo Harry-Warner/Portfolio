@@ -8,22 +8,13 @@ const LargeNav = () => {
   const { resHeight } = useContext(ResHeightContext);
   const { portHeight } = useContext(PortHeightContext);
 
-  const [header, setHeader] = useState("bg-teal text-dark");
-  const [section, setSection] = useState("first");
+  const [section, setSection] = useState("frst");
 
   useEffect(() => {
     const resume = window.innerHeight + portHeight - 45;
     const contact = window.innerHeight + portHeight + resHeight - 45;
-    const breakpoint = window.innerHeight * (7 / 12);
     const listenScrollEvent = () => {
-      if (window.scrollY <= breakpoint) {
-        setHeader("bg-teal text-dark");
-        setSection("first");
-      } else if (
-        breakpoint < window.scrollY &&
-        window.scrollY < window.innerHeight
-      ) {
-        setHeader("bg-dark text-skin");
+      if (window.scrollY < window.innerHeight) {
         setSection("");
       } else if (
         window.innerHeight <= window.scrollY &&
@@ -43,15 +34,11 @@ const LargeNav = () => {
   return (
     <>
       <div
-        className={`${header} z-50 uppercase hidden sm:flex fixed top-0 h-12 w-full bg-teal justify-end items-center px-4`}
+        className={`bg-teal text-dark z-50 uppercase hidden sm:flex fixed top-0 h-12 w-full justify-end items-center px-4`}
       >
         <div
           className={`border-solid border-b-2 ${
-            section === "portfolio"
-              ? "border-skin"
-              : section === "first"
-              ? "border-teal"
-              : "border-dark"
+            section === "portfolio" ? "border-dark" : "border-teal"
           } flex items-center h-full`}
         >
           <Link
@@ -68,11 +55,7 @@ const LargeNav = () => {
         </div>
         <div
           className={`border-solid border-b-2 ${
-            section === "resume"
-              ? "border-skin"
-              : section === "first"
-              ? "border-teal"
-              : "border-dark"
+            section === "resume" ? "border-dark" : "border-teal"
           } flex items-center h-full`}
         >
           <Link
@@ -89,11 +72,7 @@ const LargeNav = () => {
         </div>
         <div
           className={`border-solid border-b-2 ${
-            section === "contact"
-              ? "border-skin"
-              : section === "first"
-              ? "border-teal"
-              : "border-dark"
+            section === "contact" ? "border-dark" : "border-teal"
           } flex items-center h-full`}
         >
           <Link

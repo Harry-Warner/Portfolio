@@ -33,11 +33,7 @@ const Project = (props) => {
             GitHub
           </a>
           {props.internal ? (
-            <Link href="/publicplaylist">
-              <a className="ml-4 py-1 px-3 bg-skinT hover:bg-dark hover:text-skin border-dark border-2 border-solid rounded-lg">
-                Website
-              </a>
-            </Link>
+            ""
           ) : (
             <a
               className="ml-4 py-1 px-3 bg-skinT hover:bg-dark hover:text-skin border-dark border-2 border-solid rounded-lg"
