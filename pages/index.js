@@ -41,8 +41,9 @@ const Index = () => {
               <h1 className="font-sans text-center text-dark text-4xl md:text-6xl">
                 Front End Developer
               </h1>
-              <h3 className="pb-10 md:pb-0 font-sans text-center text-dark italic text-base md:text-xl uppercase">
-                Turning ideas into reality
+              <h3 className="pb-10 md:pb-0 font-sans text-center text-dark text-base md:text-xl uppercase">
+                <em>“Simplicity is prerequisite for reliability.” </em> - Edsger
+                Dijkstra
               </h3>
             </div>
             <div className="relative w-full h-5/12 bg-dark flex flex-col justify-center items-center">

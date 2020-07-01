@@ -1,9 +1,12 @@
-import React, { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { func } from "prop-types";
 import ResHeightContext from "../lib/resHeightContext";
 
 const Resume = () => {
+  const [open, setOpen] = useState(false);
+
   const { resHeight, setResHeight } = useContext(ResHeightContext);
+
   const measuredRef = useCallback((node) => {
     if (node !== null) {
       setResHeight(node.getBoundingClientRect().height);
@@ -21,7 +24,12 @@ const Resume = () => {
       <h1 className="text-4xl text-center text-cream pb-10">Resume</h1>
       <div className="flex flex-col md:flex-row w-full justify-around items-center">
         <div className="px-3 md:px-0 mx-auto w-full md:w-5/12 flex flex-col text-center text-cream">
-          <div className="md:hidden mx-auto w-11/12 md:w-4/12 h-100 bg-skin" />
+          <iframe
+            width="100%"
+            src="/cv.pdf"
+            alt="CV"
+            className="md:hidden mx-auto h-100"
+          />
           <h1 className="my-4 md:mt-0 text-2xl">About Me</h1>
           <p className="mb-4 md:mb-4 text-base">
             I graduated with a first class BSc in Mathematics with Statistics. I
@@ -42,7 +50,15 @@ const Resume = () => {
             CV to find out more!
           </p>
         </div>
-        <div className="hidden mx-auto md:block w-4/12 h-100 bg-skin" />
+        <iframe
+          width="30%"
+          src="/cv.pdf"
+          alt="CV"
+          className="hidden mx-auto md:block h-100"
+        >
+          This browser does not support PDFs. Please download the PDF to view
+          it: Download PDF
+        </iframe>
       </div>
     </section>
   );
