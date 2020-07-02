@@ -36,9 +36,6 @@ const PlayList = () => {
 
     mutate();
     reset();
-    // `/api/post/${data.length + 1}`
-    // Send a POST request to that URL with the data, then
-    // refetch using SWR
   };
 
   if (error) return <div>{error.message}</div>;
