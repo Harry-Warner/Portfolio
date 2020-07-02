@@ -51,9 +51,7 @@ const Portfolio = () => {
           }
           project={"playlist"}
           title={"Music Playlist Project"}
-          techStack={
-            "React, TypeScript, Next JS, Node JS, Tailwind CSS, Styled-Components"
-          }
+          techStack={"React, Next JS, Node JS, Tailwind CSS, Styled-Components"}
           description={`Creating a database in the route folder I developed the API using Node JS and added utility functions in order to read, create, update and delete songs from a playlist. Available locally, please find the code in the github link.`}
         />
       </section>
