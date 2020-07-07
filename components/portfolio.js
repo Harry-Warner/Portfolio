@@ -31,7 +31,7 @@ const Portfolio = () => {
           techStack={
             "React, Next JS, Sanity, Tailwind CSS, Styled-Components, GROQ"
           }
-          description={`Veggiessimo asked me to create a website for their recipes and posts on sustainability. Using React, Next JS and a Sanity headless CMS I was able to give them everything they needed and more. Through the sign up form I created they are now receiving more subscribers to their monthly emails`}
+          description={`Veggiessimo asked me to create a website for their recipes and posts on sustainability. Using React, Next JS and a Sanity headless CMS I was able to give them everything they needed and more. Through the sign up form I created they are now receiving more subscribers to their monthly emails.`}
         />
         <Project
           right
