@@ -1,26 +1,49 @@
-import {
-  getEntityById,
-  createEntity,
-  deleteEntityById,
-} from "../../../lib/databaseUtils";
+import database from "../../../lib/database";
+import Post from "../../../models/post";
 
-export default (req, res) => {
-  const getData = getEntityById("posts", req.query.id);
-  if (req.method === "POST") {
-    let postData = createEntity("posts", JSON.parse(req.body));
-    if (!req.body.artist || !req.body.song) {
-      res.status(400);
-      res.send("Please fill all fields");
-      deleteEntityById("posts", req.query.id);
-      return;
-    }
-    res.json(postData);
-  } else if (req.method === "DELETE") {
-    deleteEntityById("posts", JSON.parse(req.body));
-  } else if (!getData) {
-    res.status(404);
-    res.send("Could not find post");
-  } else {
-    res.json(getData);
+database();
+
+export default async (req, res) => {
+  const {
+    query: { id },
+    method,
+  } = req;
+
+  switch (method) {
+    case "GET":
+      try {
+        const post = await Post.findById(id);
+        if (!post) {
+          return res.status(400).json({ success: false });
+        }
+        res.status(200).json({ success: true, data: post });
+      } catch (error) {
+        res.status(400).json({ success: false });
+      }
+      break;
+    case "PUT":
+      try {
+        const updatedPost = await Post.findByIdAndUpdate(id, req.body);
+        if (!updatedPost) {
+          return res.status(400).json({ success: false });
+        }
+        res.status(200).json({ success: true, data: updatedPost });
+      } catch (error) {
+        res.status(400).json({ success: false });
+      }
+      break;
+    case "DELETE":
+      try {
+        const deletedPost = await Post.deleteOne({ _id: id });
+        if (!deletedPost) {
+          return res.status(400).json({ success: false });
+        }
+        res.status(201).json({ success: true, data: deletedPost });
+      } catch (error) {
+        res.status(400).json({ success: false });
+      }
+      break;
+    default:
+      res.status(400).json({ success: false });
   }
 };

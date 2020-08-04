@@ -5,41 +5,39 @@ import Link from "next/link";
 
 const fetcher = async (url) => await fetch(url).then((res) => res.json());
 
-const PlayList = () => {
+const Playlist = () => {
   const { data, mutate, error } = useSWR(`/api/posts`, fetcher);
   const { register, errors, handleSubmit, reset } = useForm();
-  const [deleteId, setDeleteId] = useState(0);
+  const [deleteId, setDeleteId] = useState("");
 
   useEffect(() => {
-    if (deleteId > 0) {
-      const handleDelete = async () => {
-        await fetch(`/api/post/${deleteId}`, {
-          method: "DELETE",
-          body: JSON.stringify(deleteId),
-        });
-      };
-      handleDelete();
+    if (deleteId !== "") {
+      handleDelete(deleteId);
+      setDeleteId("");
     }
-
-    setDeleteId(0);
-    mutate();
   }, [deleteId]);
-  console.log(deleteId);
 
-  const sendDataToApi = async (newData) => {
-    newData.id = data.slice(-1)[0].id + 1;
+  const handleDelete = async (deleteId) => {
+    await fetch(`/api/post/${deleteId}`, {
+      method: "DELETE",
+    });
+  };
+  console.log([data, deleteId]);
 
-    await fetch(`/api/post/${data.slice(-1)[0].id + 1}`, {
+  const postData = async (newData) => {
+    console.log(JSON.stringify(newData));
+    await fetch(`/api/posts`, {
       method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(newData),
     });
-
     mutate();
     reset();
   };
 
-  if (error) return <div>{error.message}</div>;
-  if (!data) return <div className="text-center">Loading...</div>;
   return (
     <>
       <section className="w-full h-screen bg-teal relative flex flex-col items-center justify-center">
@@ -68,25 +66,30 @@ const PlayList = () => {
           </div>
         </div>
         <div className="flex justify-center flex-col w-11/12 md:w-2/3 lg:w-1/2 mx-auto">
-          {data.map((e) => (
-            <li key={e.id} className="flex justify-between my-2">
-              <p className="text-dark px-1 w-24 md:w-32 lg:w-40 xl:w-48">
-                {e.artist}
-              </p>
-              <p className="text-dark px-1 w-24 md:w-32 lg:w-40 xl:w-48">
-                {e.song}
-              </p>
-              <button
-                onClick={() => setDeleteId(e.id)}
-                className="h-10 px-3 uppercase bg-dark text-cream rounded-lg border-dark border-2 border-solid text-base self-center leading-vtight hover:bg-skin hover:text-dark"
-              >
-                DEL
-              </button>
-            </li>
-          ))}
+          {data ? (
+            data.data.map((e) => (
+              <li key={e._id} className="flex justify-between my-2">
+                <p className="text-dark px-1 w-24 md:w-32 lg:w-40 xl:w-48">
+                  {e.artist}
+                </p>
+                <p className="text-dark px-1 w-24 md:w-32 lg:w-40 xl:w-48">
+                  {e.song}
+                </p>
+                <Link href="/song/[id]" as={`/song/${e._id}`}>
+                  <a>
+                    <button className="h-10 px-3 uppercase bg-dark text-cream rounded-lg border-dark border-2 border-solid text-base self-center leading-vtight hover:bg-skin hover:text-dark">
+                      EDIT
+                    </button>
+                  </a>
+                </Link>
+              </li>
+            ))
+          ) : (
+            <div className="spinner my-2 w-full text-center" />
+          )}
         </div>
         <form
-          onSubmit={handleSubmit(sendDataToApi)}
+          onSubmit={handleSubmit(postData)}
           className="w-11/12 md:w-2/3 lg:w-1/2 mx-auto text-center items-center my-10 flex justify-between"
         >
           <div className="relative">
@@ -118,8 +121,9 @@ const PlayList = () => {
             )}
           </div>
           <button
-            name="id"
-            value={data.length + 1}
+            type="submit"
+            // name="id"
+            // value={data.length + 1}
             className="h-10 px-3 uppercase bg-skin text-dark rounded-lg border-dark border-2 border-solid text-base self-center leading-vtight hover:bg-dark hover:text-cream"
           >
             Add
@@ -130,4 +134,4 @@ const PlayList = () => {
   );
 };
 
-export default PlayList;
+export default Playlist;

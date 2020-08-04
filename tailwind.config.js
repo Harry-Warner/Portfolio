@@ -49,7 +49,23 @@ module.exports = {
       skin: "#fdcb9e",
       skinT: "rgba(253, 203, 158, .75)",
     },
+    spinner: (theme) => ({
+      default: {
+        color: "#3f3f44",
+        size: "1em",
+        border: "2px",
+        speed: "500ms",
+      },
+      md: {
+        size: "2em",
+      },
+    }),
   },
-  variants: {},
-  plugins: [],
+  variants: { spinner: ["responsive"] },
+  plugins: [
+    require("tailwindcss-spinner")({
+      className: "spinner",
+      themeKey: "spinner",
+    }),
+  ],
 };
