@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
-import Link from "next/link";
 import Modal from "../../components/modal";
 import router from "next/router";
 
@@ -117,9 +116,7 @@ const Song = ({ data }) => {
 };
 
 Song.getInitialProps = async ({ query: { id } }) => {
-  const LOCAL = `http://localhost:3000`;
-  const PROD = process.env.URL;
-  const res = await fetch(`${PROD ? PROD : LOCAL}/api/post/${id}`);
+  const res = await fetch(`${process.env.URL}/api/post/${id}`);
   const { data } = await res.json();
 
   return { data: data };
