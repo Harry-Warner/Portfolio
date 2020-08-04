@@ -9,20 +9,6 @@ const fetcher = async (url) => await fetch(url).then((res) => res.json());
 const Playlist = () => {
   const { data, mutate, error } = useSWR(`/api/posts`, fetcher);
   const { register, errors, handleSubmit, reset } = useForm();
-  const [deleteId, setDeleteId] = useState("");
-
-  useEffect(() => {
-    if (deleteId !== "") {
-      handleDelete(deleteId);
-      setDeleteId("");
-    }
-  }, [deleteId]);
-
-  const handleDelete = async (deleteId) => {
-    await fetch(`/api/post/${deleteId}`, {
-      method: "DELETE",
-    });
-  };
 
   const postData = async (newData) => {
     await fetch(`/api/posts`, {
@@ -114,8 +100,6 @@ const Playlist = () => {
           </div>
           <button
             type="submit"
-            // name="id"
-            // value={data.length + 1}
             className="h-10 px-3 uppercase bg-skin text-dark rounded-lg border-dark border-2 border-solid text-base self-center leading-vtight hover:bg-dark hover:text-cream"
           >
             Add
