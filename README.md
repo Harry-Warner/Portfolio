@@ -4,7 +4,7 @@ This is the repository for my own personal portfolio, displaying my skills and e
 
 ## Where is the Music Playlist code?
 
-Glad you asked, use the following guide:
+Glad you asked, use the following guide to find the relevant files:
 
 - Pages and api endpoints:
   - pages
