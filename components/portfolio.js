@@ -46,13 +46,14 @@ const Portfolio = () => {
           playlist
           left
           internal
-          github={
-            "https://github.com/Harry-Warner/Portfolio/blob/master/pages/publicplaylist.js"
-          }
+          url={"/publicplaylist"}
+          github={"https://github.com/Harry-Warner/Portfolio"}
           project={"playlist"}
           title={"Music Playlist Project"}
-          techStack={"React, Next JS, Node JS, Tailwind CSS, Styled-Components"}
-          description={`Creating a database in the route folder I developed the API using Node JS and added utility functions in order to read, create, update and delete songs from a playlist. Available locally, please find the code in the github link.`}
+          techStack={
+            "React, Next JS, Node JS, MongoDB, Tailwind CSS, Styled-Components"
+          }
+          description={`Creating a database with MongoDB, I connected the API using Node JSwith API endpoints to read, create, update and delete songs from a playlist.`}
         />
       </section>
     </>

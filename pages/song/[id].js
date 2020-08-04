@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "../../components/modal";
 import router from "next/router";
+import BackButton from "../../components/backButton";
 
 const Song = ({ data }) => {
   const { register, errors, handleSubmit, reset } = useForm();
@@ -30,6 +31,7 @@ const Song = ({ data }) => {
 
   return (
     <>
+      <BackButton url="/publicplaylist" />
       <div className="h-screen w-screen flex flex-col justify-center items-center bg-teal">
         <h1 className="font-bold tracking-widest text-2xl text-dark uppercase mb-10">
           Edit or Delete Song
@@ -88,7 +90,7 @@ const Song = ({ data }) => {
                 className="py-2 px-4 h-10 uppercase bg-skin text-dark rounded-lg border-dark border-2 border-solid text-base self-center leading-vtight hover:bg-dark hover:text-cream"
                 type="button"
                 onClick={() => {
-                  setAction("Edit");
+                  setAction("save changes");
                   setDisplay(true);
                 }}
               >

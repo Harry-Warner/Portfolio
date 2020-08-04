@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useSWR from "swr";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import BackButton from "../components/backButton";
 
 const fetcher = async (url) => await fetch(url).then((res) => res.json());
 
@@ -39,14 +40,7 @@ const Playlist = () => {
   return (
     <>
       <section className="w-full h-screen bg-teal relative flex flex-col items-center justify-center">
-        <Link href="/index#playlist" scroll={false}>
-          <a
-            href="/index"
-            className="absolute top-0 left-1/12 my-5 md:my-10 -translate-x-1/2 w-11/12 underline"
-          >
-            Return to portfolio
-          </a>
-        </Link>
+        <BackButton url={"/index#playlist"} />
         <h1 className="w-11/12 md:w-2/3 lg:w-1/2 my-10 mx-auto uppercase font-bold tracking-widest text-2xl text-dark">
           Playlist
         </h1>
@@ -127,6 +121,9 @@ const Playlist = () => {
             Add
           </button>
         </form>
+        <p className="text-center text-gray-500 text-xs">
+          &copy;2020 Harry Warner. All rights reserved.
+        </p>
       </section>
     </>
   );
