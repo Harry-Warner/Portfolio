@@ -24,7 +24,7 @@ const Modal = ({ action, data, display, setDisplay }) => {
             <button
               className="m-3 py-2 px-4 h-10 uppercase bg-skin text-dark rounded-lg border-dark border-2 border-solid text-base leading-vtight hover:bg-skin hover:text-dark"
               type={action === "Delete" ? "button" : "submit"}
-              onClick={action === "Delete" ? deleteData : ""}
+              {...(action == "Delete" && { onClick: deleteData })}
             >
               yes
             </button>

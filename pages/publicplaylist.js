@@ -22,10 +22,8 @@ const Playlist = () => {
       method: "DELETE",
     });
   };
-  console.log([data, deleteId]);
 
   const postData = async (newData) => {
-    console.log(JSON.stringify(newData));
     await fetch(`/api/posts`, {
       method: "POST",
       headers: {

@@ -12,8 +12,10 @@ const Song = ({ data }) => {
   const [action, setAction] = useState("");
   const [display, setDisplay] = useState(false);
 
-  const saveData = async (newData) => {
-    console.log(JSON.stringify(data._id));
+  const saveData = async (newData, e) => {
+    if (!display) {
+      return;
+    }
     await fetch(`/api/post/${data._id}`, {
       method: "PUT",
       headers: {
@@ -115,9 +117,9 @@ const Song = ({ data }) => {
 };
 
 Song.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(
-    `https://portfolio.harry-warner.vercel.app/api/post/${id}`
-  );
+  const LOCAL = `http://localhost:3000`;
+  const PROD = process.env.URL;
+  const res = await fetch(`${PROD ? PROD : LOCAL}/api/post/${id}`);
   const { data } = await res.json();
 
   return { data: data };
