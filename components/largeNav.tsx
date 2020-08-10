@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-scroll";
-import { number } from "prop-types";
 import ResHeightContext from "../lib/resHeightContext";
 import PortHeightContext from "../lib/portHeightContext";
 
@@ -47,7 +46,6 @@ const LargeNav = () => {
             duration={500}
             spy={true}
             smooth={true}
-            scroll={true}
             className="font-bold px-4 cursor-pointer"
           >
             Portfolio
@@ -64,7 +62,6 @@ const LargeNav = () => {
             duration={500}
             spy={true}
             smooth={true}
-            scroll={true}
             className="font-bold px-4 cursor-pointer"
           >
             Resume
@@ -81,7 +78,6 @@ const LargeNav = () => {
             duration={500}
             spy={true}
             smooth={true}
-            scroll={true}
             className="font-bold px-4 cursor-pointer"
           >
             Contact
@@ -90,10 +86,6 @@ const LargeNav = () => {
       </div>
     </>
   );
-};
-
-LargeNav.propTypes = {
-  height: number.isRequired,
 };
 
 export default LargeNav;

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const connection = {};
+const connection: any = {};
 
 const database = async () => {
   if (connection.isConnected) {
@@ -12,6 +12,7 @@ const database = async () => {
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: false,
     }
   );
 

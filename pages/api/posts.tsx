@@ -1,9 +1,10 @@
 import database from "../../lib/database";
 import Post from "../../models/post";
+import { NextApiRequest, NextApiResponse } from "next";
 
 database();
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { method } = req;
 
   switch (method) {

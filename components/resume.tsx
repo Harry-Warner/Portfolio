@@ -1,35 +1,28 @@
 import React, { useCallback, useContext, useState } from "react";
-import { func } from "prop-types";
 import ResHeightContext from "../lib/resHeightContext";
+import { Document, Page } from "react-pdf";
 
 const Resume = () => {
-  const [open, setOpen] = useState(false);
+  const [scale, setScale] = useState(false);
 
   const { resHeight, setResHeight } = useContext(ResHeightContext);
 
   const measuredRef = useCallback((node) => {
     if (node !== null) {
       setResHeight(node.getBoundingClientRect().height);
-      console.log(node.getBoundingClientRect().height);
     }
   }, []);
 
   console.log(resHeight);
   return (
     <section
-      ref={measuredRef}
       name="resume"
+      ref={measuredRef}
       className="flex flex-col w-full justify-center items-center pt-12 bg-dark md:h-screen"
     >
       <h1 className="text-4xl text-center text-cream pb-10">Resume</h1>
       <div className="flex flex-col md:flex-row w-full justify-around items-center">
-        <div className="px-3 md:px-0 mx-auto w-full md:w-5/12 flex flex-col text-center text-cream">
-          <iframe
-            width="100%"
-            src="/cv.pdf"
-            alt="CV"
-            className="md:hidden mx-auto h-100"
-          />
+        <div className="relative px-3 md:px-0 mx-auto w-full md:w-5/12 flex flex-col text-center text-cream">
           <h1 className="my-4 md:mt-0 text-2xl">About Me</h1>
           <p className="mb-4 md:mb-4 text-base">
             I graduated with a first class BSc in Mathematics with Statistics. I
@@ -50,22 +43,23 @@ const Resume = () => {
             CV to find out more!
           </p>
         </div>
-        <iframe
-          width="30%"
-          src="/cv.pdf"
-          alt="CV"
-          className="hidden mx-auto md:block h-100"
+        <div
+          onClick={() => setScale(!scale)}
+          className={`mx-auto max-w-screen max-h-screen box-border overflow-scroll cursor-pointer hover:shadow-outline ${
+            scale ? "absolute" : "relative"
+          }`}
         >
-          This browser does not support PDFs. Please download the PDF to view
-          it: Download PDF
-        </iframe>
+          <Document file="cv.pdf">
+            {scale ? (
+              <Page scale={1} pageNumber={1} />
+            ) : (
+              <Page scale={0.5} pageNumber={1} />
+            )}
+          </Document>
+        </div>
       </div>
     </section>
   );
-};
-
-Resume.propTypes = {
-  setResHeight: func.isRequired,
 };
 
 export default Resume;

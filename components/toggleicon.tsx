@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { bool, func } from "prop-types";
 
-const ToggleIcon = ({ open, setOpen }) => {
+const ToggleIcon = ({ open, setOpen }: any) => {
   return (
     <>
       <StyledIcon open={open} onClick={() => setOpen(!open)}>
@@ -14,10 +13,9 @@ const ToggleIcon = ({ open, setOpen }) => {
   );
 };
 
-ToggleIcon.propTypes = {
-  open: bool.isRequired,
-  setOpen: func.isRequired,
-};
+interface Props {
+  open: boolean;
+}
 
 const StyledIcon = styled.div`
   position: absolute;
@@ -38,25 +36,26 @@ const StyledIcon = styled.div`
   }
 
   div {
-    width: ${({ open }) => (open ? "2rem" : "2.5rem")};
+    width: ${({ open }: Props) => (open ? "2rem" : "2.5rem")};
     height: 0.25rem;
-    background: ${({ open }) => (open ? "#f7f7f7" : "#3f3f44")};
+    background: ${({ open }: Props) => (open ? "#f7f7f7" : "#3f3f44")};
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
 
     :first-child {
-      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${({ open }: Props) => (open ? "rotate(45deg)" : "rotate(0)")};
     }
 
     :nth-child(2) {
-      opacity: ${({ open }) => (open ? "0" : "1")};
-      transform: ${({ open }) =>
+      opacity: ${({ open }: Props) => (open ? "0" : "1")};
+      transform: ${({ open }: Props) =>
         open ? "translateX(-20px)" : "translateX(0)"};
     }
 
     :nth-child(3) {
-      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
+      transform: ${({ open }: Props) =>
+        open ? "rotate(-45deg)" : "rotate(0)"};
     }
   }
 

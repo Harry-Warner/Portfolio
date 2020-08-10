@@ -28,8 +28,6 @@ const Index = () => {
     setPortHeight,
   ]);
 
-  console.log(resHeight);
-
   return (
     <>
       <PortHeightContext.Provider value={portValue}>

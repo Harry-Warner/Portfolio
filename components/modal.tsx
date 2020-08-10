@@ -1,7 +1,7 @@
 import React from "react";
 import router from "next/router";
 
-const Modal = ({ action, data, display, setDisplay }) => {
+const Modal = ({ action, data, display, setDisplay }: any) => {
   const deleteData = async () => {
     await fetch(`/api/post/${data._id}`, {
       method: "DELETE",

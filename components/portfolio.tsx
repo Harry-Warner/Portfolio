@@ -1,6 +1,5 @@
 import React, { useCallback, useContext } from "react";
 import Project from "./project";
-import { func } from "prop-types";
 import PortHeightContext from "../lib/portHeightContext";
 
 const Portfolio = () => {
@@ -14,7 +13,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <section ref={measuredRef} name="portfolio" className="bg-cream">
+      <section name="portfolio" ref={measuredRef} className="bg-cream">
         <h1 className="text-5xl text-dark text-center font-sans pt-20">
           Portfolio
         </h1>
@@ -42,7 +41,7 @@ const Portfolio = () => {
           project={"playlist"}
           title={"Music Playlist Project"}
           techStack={
-            "React, Next.js, Node.js, MongoDB, Tailwind CSS, Styled-Components"
+            "React, Next.js, TypeScript, Node.js, MongoDB, Tailwind CSS, Styled-Components"
           }
           description={`Creating a database with MongoDB, I connected the API using Node.js with API endpoints to read, create, update and delete songs from a playlist.`}
         />
@@ -58,10 +57,6 @@ const Portfolio = () => {
       </section>
     </>
   );
-};
-
-Portfolio.propTypes = {
-  setPortHeight: func.isRequired,
 };
 
 export default Portfolio;

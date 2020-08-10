@@ -1,7 +1,11 @@
 import React from "react";
 import Link from "next/link";
 
-const BackButton = ({ url }) => {
+type Url = {
+  url: string;
+};
+
+const BackButton = ({ url }: Url) => {
   return (
     <Link href={url} scroll={false}>
       <a

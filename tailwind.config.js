@@ -27,6 +27,12 @@ module.exports = {
         "5/12": "41.666667%",
         "7/12": "58.33333%",
       },
+      maxWidth: {
+        screen: "100vw",
+      },
+      maxHeight: {
+        screen: "100vh",
+      },
       lineHeight: {
         "2": "0.5rem",
         "1": "0.25rem",

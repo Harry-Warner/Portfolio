@@ -1,9 +1,17 @@
 import React from "react";
 import { Link } from "react-scroll";
 import styled from "styled-components";
-import { bool, func } from "prop-types";
 
-const ToggleMenu = ({ open, setOpen }) => {
+interface Props {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+interface StyledProps {
+  open: boolean;
+}
+
+const ToggleMenu = ({ open, setOpen }: Props) => {
   return (
     <StyledMenu
       open={open}
@@ -21,7 +29,6 @@ const ToggleMenu = ({ open, setOpen }) => {
           duration={500}
           spy={true}
           smooth={true}
-          scroll={true}
         >
           Portfolio
         </Link>
@@ -33,7 +40,6 @@ const ToggleMenu = ({ open, setOpen }) => {
           duration={500}
           spy={true}
           smooth={true}
-          scroll={true}
         >
           Resume
         </Link>
@@ -45,7 +51,6 @@ const ToggleMenu = ({ open, setOpen }) => {
           duration={500}
           spy={true}
           smooth={true}
-          scroll={true}
         >
           Contact
         </Link>
@@ -54,15 +59,10 @@ const ToggleMenu = ({ open, setOpen }) => {
   );
 };
 
-ToggleMenu.propTypes = {
-  open: bool.isRequired,
-  setOpen: func.isRequired,
-};
-
 const StyledMenu = styled.div`
   width: 100%;
   transition: all 0.3s ease-in-out;
-  left: ${({ open }) => (open ? "0" : "-100%")};
+  left: ${({ open }: StyledProps) => (open ? "0" : "-100%")};
   font-size: 20px;
   letter-spacing: 3px;
 

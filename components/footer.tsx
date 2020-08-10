@@ -5,6 +5,7 @@ const Footer = () => {
     <section className="h-64 w-full bg-dark text-creamT flex flex-col items-center justify-center text-center">
       <h3 className="text-base w-11/12 md:w-1/2">
         This site was built with <span className="text-cream">React</span>,{" "}
+        <span className="text-cream">TypeScript</span>,{" "}
         <span className="text-cream">Next JS</span>,{" "}
         <span className="text-cream">Tailwind CSS</span>, and
         <span className="text-cream"> Styled-Components</span>. Font in the body

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, SyntheticEvent, ChangeEvent } from "react";
 import styled from "styled-components";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -25,10 +25,10 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) =>
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
       const res = await fetch("https://api.staticforms.xyz/submit", {
@@ -114,11 +114,9 @@ const Contact = () => {
           />
           <textarea
             onChange={(e) => {
-              handleChange(e);
               setMessage(e.target.value);
             }}
             required
-            type="text"
             name="message"
             value={message}
             placeholder="Message"
@@ -176,7 +174,7 @@ const Contact = () => {
         duration={500}
         spy={true}
         smooth={true}
-        scroll={true}
+        // scroll={true}
         className="text-dark my-8 absolute w-full text-center underline bottom-0 text-base cursor-pointer"
       >
         Back to top

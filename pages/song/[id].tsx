@@ -4,7 +4,7 @@ import Modal from "../../components/modal";
 import router from "next/router";
 import BackButton from "../../components/backButton";
 
-const Song = ({ data }) => {
+const Song = ({ data }: any) => {
   const { register, errors, handleSubmit, reset } = useForm();
   const [song, setSong] = useState(data.song);
   const [artist, setArtist] = useState(data.artist);
@@ -12,7 +12,7 @@ const Song = ({ data }) => {
   const [action, setAction] = useState("");
   const [display, setDisplay] = useState(false);
 
-  const saveData = async (newData, e) => {
+  const saveData = async (newData: any, e: any) => {
     if (!display) {
       return;
     }
@@ -117,7 +117,7 @@ const Song = ({ data }) => {
   );
 };
 
-Song.getInitialProps = async ({ query: { id } }) => {
+Song.getInitialProps = async ({ query: { id } }: any) => {
   const res = await fetch(`${process.env.URL}/api/post/${id}`);
   const { data } = await res.json();
 

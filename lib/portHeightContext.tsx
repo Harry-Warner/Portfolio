@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const PortHeightContext = createContext(null);
+const PortHeightContext = createContext<any>(0);
 
 export default PortHeightContext;

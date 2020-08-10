@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const Project = (props) => {
+const Project = (props: any) => {
   return (
     <div
       id={props.playlist ? "playlist" : ""}

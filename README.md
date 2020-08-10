@@ -8,19 +8,19 @@ Glad you asked, use the following guide to find the relevant files:
 
 - Pages and api endpoints:
   - pages
-    - publicplaylist.js
+    - publicplaylist.tsx
     - song
-      - [id].js
+      - [id].tsx
     - api
-      - posts.js
+      - posts.tsx
       - post
-        - [id].js
+        - [id].tsx
 - Components:
   - components
-    - modal.js
+    - modal.tsx
 - Schema:
   - models
-    - post.js
+    - post.tsx
 - Database connection:
   - lib
-    - database.js
+    - database.tsx
