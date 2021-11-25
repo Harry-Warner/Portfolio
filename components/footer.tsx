@@ -8,8 +8,7 @@ const Footer = () => {
         <span className="text-cream">TypeScript</span>,{" "}
         <span className="text-cream">Next JS</span>,{" "}
         <span className="text-cream">Tailwind CSS</span>, and
-        <span className="text-cream"> Styled-Components</span>. Font in the body
-        is Open Sans taken from Google.
+        <span className="text-cream"> Styled-Components</span>
       </h3>
       <div className="flex">
         <a

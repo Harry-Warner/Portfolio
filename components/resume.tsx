@@ -13,7 +13,6 @@ const Resume = () => {
     }
   }, []);
 
-  console.log(resHeight);
   return (
     <section
       name="resume"
@@ -22,25 +21,21 @@ const Resume = () => {
     >
       <h1 className="text-4xl text-center text-cream pb-10">Resume</h1>
       <div className="flex flex-col md:flex-row w-full justify-around items-center">
-        <div className="relative px-3 md:px-0 mx-auto w-full md:w-5/12 flex flex-col text-center text-cream">
-          <h1 className="my-4 md:mt-0 text-2xl">About Me</h1>
+        <div className="relative px-3 md:px-0 mx-auto w-full md:w-5/12 flex flex-col text-start text-cream">
+          <h1 className="my-4 md:mt-0 text-2xl">Industry experience</h1>
           <p className="mb-4 md:mb-4 text-base">
-            I graduated with a first class BSc in Mathematics with Statistics. I
-            felt that many of the professions that such a degree gives access to
-            lacked the creative aspect I was looking for. Soon after graduating
-            I took time out to travel and to consider which direction my career
-            should take. I travelled across South East Asia for 7 months and
-            then Australia for a year.
+            I began working for <span className="underline text-skin"><a href="https://www.iventis.co.uk/">Iventis</a></span> in September 2020
+            as a Graduate Software Engineer. Since then I have been an integral part of the dev team as we build a brand new version of the product, 
+            and earlier this year I was promoted to Software Engineer.
             <br />
             <br />
-            While abroad I discussed a number of options with many like minded
-            people and over time, the idea of a career in web development
-            started to emerge. Immediately after returning to the UK I got to
-            work, spending many long hours playing with code on my computer. My
-            background in mathematics has nurtured my interest in problem
-            solving. Taking these skills and an aspiration to excel in this
-            field will, I hope be an asset to any future employer. Check out my
-            CV to find out more!
+            With the front end going from angular to react and the back end transitioning from monolith to a microservice architecture we are making
+            strong progress towards a strong reliable system while continuing to innovate.
+            <br />
+            <br />
+            As a Software Engineer I work on both the front and back end. On the front end React codebase we work with MapBox GL for map 
+            integration and interactivity, XState for state management (Axios for API calls) and Jest/Cypress for testing. On the back end, 
+            we use C# with Kafka to communicate between micro services and Postgres/Postgis for the database.
           </p>
         </div>
         <div
