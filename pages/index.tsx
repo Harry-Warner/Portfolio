@@ -37,7 +37,7 @@ const Index = () => {
           <section name="home" className="w-full h-screen min-h-screen">
             <div className="pb-4 w-full h-7/12 bg-teal flex flex-col justify-center items-center">
               <h1 className="font-sans text-center text-dark text-4xl md:text-6xl">
-                Front End Developer
+                Software Engineer
               </h1>
               <h3 className="pb-10 md:pb-0 font-sans text-center text-dark text-base md:text-xl uppercase">
                 <em>“Simplicity is prerequisite for reliability.” </em> - Edsger
@@ -47,17 +47,16 @@ const Index = () => {
             <div className="relative w-full h-5/12 bg-dark flex flex-col justify-center items-center">
               <img
                 src="./harry.jpg"
-                className="absolute -top-20 rounded-full h-40 md:h-48 w-40 md:w-48"
+                className="absolute -top-20 rounded-full h-40 md:h-48 w-40 md:w-48 cover"
                 alt="Profile picture of Harry with Edinburgh city as the backdrop"
               />
               <h2 className="mt-10 text-2xl md:text-4xl text-center text-cream font-sans">
                 Harry Warner
               </h2>
               <h4 className="text-sm md:text-xl text-center text-cream font-sans px-4 lg:px-10 py-2">
-                Hello and welcome to my portfolio. I'm a front end developer
-                looking to find a team who will push me to my limits and beyond!
-                Learning new technologies is my passion and excellence is my
-                virtue. I have worked mostly with React based apps.
+                Hello! I’m a software engineer specializing in building exceptional digital experiences. 
+                Currently, I’m focused on building accessible, industry leading collaborative mapping software at 
+                {" "}<span className="underline text-teal"><a href="https://www.iventis.co.uk/">Iventis</a></span>.
               </h4>
             </div>
           </section>
